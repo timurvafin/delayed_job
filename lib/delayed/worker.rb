@@ -36,9 +36,6 @@ module Delayed
     end
     
     def self.guess_backend
-      # HACK for mongoid
-      return :mongoid
-
       self.backend ||= if defined?(ActiveRecord)
         :active_record
       elsif defined?(MongoMapper)
